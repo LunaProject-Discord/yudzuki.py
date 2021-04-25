@@ -23,7 +23,7 @@ class Route:
         else:
             self.url = url
 
-class YudzukiClient:
+class HTTPClient:
     
     def __init__(self, bot, token):
         self.bot = bot
