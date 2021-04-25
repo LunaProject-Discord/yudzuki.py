@@ -10,7 +10,7 @@ from .http import HTTPClient
 from . import util
 
 __all__ = (
-    "YudzukiClient
+    "YudzukiClient"
 )
 
 log = logging.getLogger(__name__)
