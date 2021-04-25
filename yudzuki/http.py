@@ -25,8 +25,7 @@ class Route:
 
 class HTTPClient:
     
-    def __init__(self, bot, token):
-        self.bot = bot
+    def __init__(self, token):
         self.token = token
         self.session = None
         
