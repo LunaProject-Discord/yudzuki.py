@@ -31,5 +31,7 @@ class YudzukiClient:
         if self._closed:
             return
         
-        self.http.close()
+        await self.http.close()
     
+    async def get_user(self, user_id):
+        return await User(user_id)
