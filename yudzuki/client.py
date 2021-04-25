@@ -8,6 +8,7 @@ from .errors import *
 from .gateway import *
 from .http import HTTPClient
 from . import util
+from .user import User
 
 __all__ = (
     "YudzukiClient"
@@ -22,7 +23,7 @@ class YudzukiClient:
         
         self._closed = False
         
-        self.http = HTTPClient(bot, token)
+        self.http = HTTPClient(token)
     
     async def close(self):
         if self._closed:
