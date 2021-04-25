@@ -4,8 +4,6 @@ import traceback
 
 import aiohttp
 
-from .user import User
-from .guild import Guild
 from .errors import *
 from .gateway import *
 from .http import HTTPClient
@@ -32,6 +30,3 @@ class YudzukiClient:
             return
         
         await self.http.close()
-    
-    async def get_user(self, user_id):
-        return await User(user_id)
