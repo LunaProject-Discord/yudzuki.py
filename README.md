@@ -15,6 +15,6 @@ Run:
 
 Support
 ====
-https://discord.gg/TbNCcTyx2t 
+https://lunaproject.jp/support
 
 ***
