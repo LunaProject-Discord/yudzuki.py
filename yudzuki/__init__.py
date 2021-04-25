@@ -4,3 +4,4 @@ from .errors import *
 from .http import *
 from .util import *
 from .gateway import *
+from .client import *
