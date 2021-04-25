@@ -17,8 +17,7 @@ log = logging.getLogger(__name__)
 
 class YudzukiClient:
     
-    def __init__(self, bot, token):
-        self.bot = bot
+    def __init__(self, token):
         self.token = token
         
         self._closed = False
