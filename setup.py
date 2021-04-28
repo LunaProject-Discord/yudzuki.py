@@ -7,7 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 setuptools.setup(
     name="yudzuki",
     version=__version__,
-    author="Midorichan",
+    author="Team LunaProject",
     description="An API Wrapper for YudzukiAPI"
     long_description=readme,
     long_description_content_type="text/markdown",
