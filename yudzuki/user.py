@@ -1,4 +1,7 @@
 from .activity import Activity
+from .punishment import Punishment
+from .name import Name
+from .setting import UserSetting
 
 __all__ = (
     "User",
@@ -39,6 +42,14 @@ class User:
         return self.data
     
     @property
+    def settings(self):
+        return UserSetting(self.settings)
+    
+    @property
+    def names(self):
+        return [Name(v) for v in self.names]
+    
+    @property
     def status(self):
         return self.status
     
@@ -47,8 +58,8 @@ class User:
         if not self.activities:
             return None
         
-        return Activity(self.activities)
-    
+        return [Activity(v) for v in self.activities]
+
     @property
     def public_flags(self):
         return self.public_flags
