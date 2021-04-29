@@ -7,3 +7,5 @@ from .role import *
 from .setting import *
 from .user import *
 from .client import *
+
+__version__ = "1.0.0"
