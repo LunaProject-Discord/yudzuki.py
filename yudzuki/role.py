@@ -1,5 +1,5 @@
 __all__ = (
-    "Role"
+    "Role",
 )
 
 class Role:
