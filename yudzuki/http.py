@@ -62,6 +62,7 @@ class HTTPClient:
         try:
             async with self.session.request(method, url, headers=headers) as ret:
                 log.debug("%s %s has returned %s", method, url, ret.status)
+                log.warn(ret.headers)
             
                 data = await ret.text(encoding="utf-8")
                 
@@ -70,8 +71,6 @@ class HTTPClient:
                         data = await ret.json()
                 except KeyError:
                     pass
-                
-                print(ret.headers)
                 
                 if 300 > ret.status >= 200:
                     log.debug("%s %s has received %s", method, url, data)
