@@ -16,32 +16,32 @@ class Emoji:
         )
     
     def _update(self, data):
-        self.id = data["id"]
-        self.name = data["name"]
-        self.managed = data["managed"]
-        self.animated = data["animated"]
+        self._id = data["id"]
+        self._name = data["name"]
+        self._managed = data["managed"]
+        self._animated = data["animated"]
         
-        self.roles = data.get("roles", [])
+        self._roles = data.get("roles", [])
         
     def _get_json(self):
         return self.data
     
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def managed(self):
-        return self.managed
+        return self._managed
     
     @property
     def animated(self):
-        return self.animated
+        return self._animated
     
     @property
     def roles(self):
-        return [Role(v) for v in self.roles]
+        return [Role(v) for v in self._roles]
