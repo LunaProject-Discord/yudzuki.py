@@ -17,6 +17,8 @@ class APINotFound(YudzukiException):
         
         super().__init__(msg)
 
+class UnauthorizedDetected(YudzukiException):
+    pass
 
 class HTTPException(YudzukiException):
     
