@@ -39,6 +39,11 @@ class HTTPClient:
         self.recreate()
     
     def recreate(self):
+        if not self.session:
+            self.session = aiohttp.ClientSession(
+                ws_response_class=YudzukiClientWebSocketResponse
+            )
+        
         if self.session.closed:
             self.session = aiohttp.ClientSession(
                 ws_response_class=YudzukiClientWebSocketResponse
