@@ -71,7 +71,7 @@ class HTTPClient:
                 except KeyError:
                     pass
                 
-                print(data, type(data))
+                print(ret.headers)
                 
                 if 300 > ret.status >= 200:
                     log.debug("%s %s has received %s", method, url, data)
