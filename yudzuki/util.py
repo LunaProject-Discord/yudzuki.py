@@ -1,8 +1,3 @@
-async def json_or_text(response):
-    text = await response.json()
-
-    return text
-
 def staff_value(value):
     if value == 1:
         return "staff"
