@@ -21,35 +21,35 @@ class UserSetting:
         )
     
     def _update(self, data):
-        self.verified = data["verified"]
-        self.permission = data["permission"]
-        self.language = data["language"]
-        self.evaluate_value = data["evaluate_value"]
-        self.timezone = data["timezone"]
+        self._verified = data["verified"]
+        self._permission = data["permission"]
+        self._language = data["language"]
+        self._evaluate_value = data["evaluate_value"]
+        self._timezone = data["timezone"]
     
     @property
     def permission(self):
-        return self.permission
+        return self._permission
     
     @property
     def staff(self):
-        return staff_value(self.permission)
+        return staff_value(self._permission)
     
     @property
     def evaluate_value(self):
-        return self.evaluate_value
+        return self._evaluate_value
     
     @property
     def verified(self):
-        return self.verified
+        return self._verified
     
     @property
     def language(self):
-        return self.language
+        return self._language
     
     @property
     def timezone(self):
-        return self.timezone
+        return self._timezone
     
 class GuildSetting:
     
@@ -67,23 +67,23 @@ class GuildSetting:
         return self.data
 
     def _update(self, data):
-        self.verified = data["verified"]
-        self.language = data["language"]
-        self.prefix = data["prefix"]
-        self.timezone = data["timezone"]
+        self._verified = data["verified"]
+        self._language = data["language"]
+        self._prefix = data["prefix"]
+        self._timezone = data["timezone"]
     
     @property
     def verified(self):
-        return self.verified
+        return self._verified
     
     @property
     def language(self):
-        return self.language
+        return self._language
     
     @property
     def prefix(self):
-        return self.prefix
+        return self._prefix
     
     @property
     def timezone(self):
-        return self.timezone
+        return self._timezone
