@@ -4,19 +4,17 @@ import json
 
 from urllib.parse import quote as _uriquote
 
-from .errors import HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError, UnauthorizedDetected
+from .errors import YudzukiException, HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError, UnauthorizedDetected
 from .gateway import YudzukiClientWebSocketResponse
 from .__init__ import __version__
 
 log = logging.getLogger(__name__)
 
 async def json_or_text(resp):
-    text = await resp.text(encoding="utf-8")
-    
     try:
         text = await resp.json()
-    except:
-        pass
+    except Exception as e:
+        raise YudzukiException(e)
     
     return text
 
