@@ -5,7 +5,7 @@ async def json_or_text(response):
     
     try:
         if response.headers['Content-Type'] == 'application/json':
-            return json.loads(await response.json())
+            return json.loads(text)
     except KeyError:
         pass
 
