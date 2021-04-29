@@ -67,7 +67,7 @@ class HTTPClient:
                 data = await ret.text(encoding="utf-8")
                 
                 try:
-                    if ret.headers["Content-Type"] == "application/json":
+                    if ret.headers["Content-Type"] == "application/json; charset=UTF-8":
                         data = json.loads(data)
                 except KeyError:
                     pass
