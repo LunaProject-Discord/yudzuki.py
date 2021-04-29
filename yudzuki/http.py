@@ -10,6 +10,17 @@ from .__init__ import __version__
 
 log = logging.getLogger(__name__)
 
+async def json_or_text(resp):
+    text = await resp.text(encoding="utf-8")
+    
+    try:
+        if resp.headers["Content-Type"] == "application/json; charset=UTF-8" or resp.headers["Content-Type"] == "application/json":
+            text = json.loads(text)
+    except KeyError:
+        pass
+    
+    return text
+
 class Route:
     
     BASE = "https://api.aoichaan0513.jp/v1"
@@ -64,13 +75,7 @@ class HTTPClient:
             async with self.session.request(method, url, headers=headers) as ret:
                 log.debug("%s %s has returned %s", method, url, ret.status)
             
-                data = await ret.text(encoding="utf-8")
-                
-                try:
-                    if str(ret.headers["Content-Type"]) == "application/json; charset=UTF-8":
-                        data = json.loads(data)
-                except KeyError:
-                    pass
+                data = await json_or_text(ret)
                 
                 if 300 > ret.status >= 200:
                     log.debug("%s %s has received %s", method, url, data)
