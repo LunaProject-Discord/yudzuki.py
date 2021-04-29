@@ -1,11 +1,11 @@
 import aiohttp
 import logging
+import json
 
 from urllib.parse import quote as _uriquote
 
 from .errors import HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError, UnauthorizedDetected
 from .gateway import YudzukiClientWebSocketResponse
-from .util import json_or_text
 from .__init__ import __version__
 
 log = logging.getLogger(__name__)
@@ -64,7 +64,15 @@ class HTTPClient:
             async with self.session.request(method, url, headers=headers) as ret:
                 log.debug("%s %s has returned %s", method, url, ret.status)
             
-                data = await json_or_text(ret)
+                data = await ret.text(encoding="utf-8")
+                
+                try:
+                    if ret.headers["Content-Type"] == "application/json":
+                        data = json.loads(data)
+                except KeyError:
+                    pass
+                
+                print(data, type(data))
                 
                 if 300 > ret.status >= 200:
                     log.debug("%s %s has received %s", method, url, data)
