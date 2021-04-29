@@ -1,7 +1,7 @@
 import datetime
 
 __all__ = (
-    "Name"
+    "Name",
 )
 
 class Name:
