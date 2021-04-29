@@ -16,6 +16,9 @@ class Timestamps:
             f"<Timestamps start={self.start} end={self.end}>"
         )
     
+    def _get_json(self):
+        return self.data
+    
     def _update(self, data):
         self.start = data.get("start", 0)
         self.end = data.get("end", 0)
@@ -38,6 +41,9 @@ class Activity:
         return (
             f"<Activity type={self.type}>"
         )
+    
+    def _get_json(self):
+        return self.data
     
     def _update(self, data):
         self.name = data.get("name", "")
