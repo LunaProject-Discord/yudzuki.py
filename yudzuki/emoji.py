@@ -1,7 +1,7 @@
 from .role import Role
 
 __all__ = (
-    "Emoji"
+    "Emoji",
 )
 
 class Emoji:
