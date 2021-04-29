@@ -4,7 +4,8 @@ __all__ = (
     "APINotFound",
     "YudzukiException",
     "NotFound",
-    "YudzukiServerError"
+    "YudzukiServerError",
+    "UnauthorizedDetected"
 )
 
 class YudzukiException(Exception):
