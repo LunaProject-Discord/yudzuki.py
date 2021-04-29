@@ -1,7 +1,7 @@
 import aiohttp
 
 __all__ = (
-    "YudzukiClientWebSocketResponse"
+    "YudzukiClientWebSocketResponse",
 )
 
 class YudzukiClientWebSocketResponse(aiohttp.ClientWebSocketResponse):
