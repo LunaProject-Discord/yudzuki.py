@@ -1,3 +1,5 @@
+from activity import Activity
+
 __all__ = (
     "User",
 )
@@ -25,13 +27,24 @@ class User:
         self.settings = data["settings"]
         self.names = data["names"]
         self.punishments = data["punishments"]
+        
         self.public_flags = data.get("flags", 0)
         self.bot = data.get('bot', False)
         self.system = data.get('system', False)
         self.avatar_url = data.get("avatar_url", None)
+        self.status = data.get("online_status", "offline")
+        self.activities = data.get("activities", [])
     
     def _get_json(self):
         return self.data
+    
+    @property
+    def status(self):
+        return self.status
+    
+    @property
+    def activities(self):
+        return Activity(self.activities)
     
     @property
     def public_flags(self):
