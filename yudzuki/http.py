@@ -14,7 +14,7 @@ async def json_or_text(resp):
     text = await resp.text(encoding="utf-8")
     
     try:
-        text = json.loads(text)
+        text = await resp.json()
     except:
         pass
     
