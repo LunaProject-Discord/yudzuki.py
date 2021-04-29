@@ -6,7 +6,7 @@ from urllib.parse import quote as _uriquote
 from .errors import HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError, UnauthorizedDetected
 from .gateway import YudzukiClientWebSocketResponse
 from .util import json_or_text
-from __init__ import __version__
+from .__init__ import __version__
 
 log = logging.getLogger(__name__)
 
