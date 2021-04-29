@@ -1,5 +1,6 @@
 import aiohttp
 import logging
+import json
 
 from urllib.parse import quote as _uriquote
 
@@ -62,13 +63,12 @@ class HTTPClient:
         try:
             async with self.session.request(method, url, headers=headers) as ret:
                 log.debug("%s %s has returned %s", method, url, ret.status)
-                log.warn(ret.headers)
             
                 data = await ret.text(encoding="utf-8")
                 
                 try:
                     if ret.headers["Content-Type"] == "application/json":
-                        data = await ret.json()
+                        data = json.loads(data)
                 except KeyError:
                     pass
                 
