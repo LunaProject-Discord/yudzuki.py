@@ -1,4 +1,4 @@
-from activity import Activity
+from .activity import Activity
 
 __all__ = (
     "User",
