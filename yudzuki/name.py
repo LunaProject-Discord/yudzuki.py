@@ -16,21 +16,21 @@ class Name:
         )
     
     def _update(self, data):
-        self.name = data["name"]
-        self.updated_at = data["updated_at"]
-        self.created_at = data["created_at"]
+        self._name = data["name"]
+        self._updated_at = data["updated_at"]
+        self._created_at = data["created_at"]
     
     def _get_json(self):
         return self.data
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def updated_at(self):
-        return datetime.datetime.utcfromtimestamp(self.updated_at).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self._updated_at).replace(tzinfo=datetime.timezone.utc)
     
     @property
     def created_at(self):
-        return datetime.datetime.utcfromtimestamp(self.created_at).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self._created_at).replace(tzinfo=datetime.timezone.utc)
