@@ -7,6 +7,7 @@ with open("README.md", "r", encoding="utf-8") as f:
 __version__ = "1.0.0"
 
 setuptools.setup(
+    name="yudzuki.py"
     author="LunaProject Team Member",
     version=__version__,
     url="https://github.com/LunaProject-Discord/yudzuki.py",
