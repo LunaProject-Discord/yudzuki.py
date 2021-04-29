@@ -23,15 +23,15 @@ class User:
         return f"{self.name}#{self.discriminator}"
     
     def _update(self, data):
-        self.name = data["name"]
-        self.id = int(data["id"])
-        self.discriminator = data["discriminator"]
-        self.avatar = data["avatar"]
-        self.settings = data["settings"]
-        self.names = data["names"]
-        self.punishments = data["punishments"]
-        self.system = data["system"]
-        self.bot = data["bot"]
+        self._name = data["name"]
+        self._id = int(data["id"])
+        self._discriminator = data["discriminator"]
+        self._avatar = data["avatar"]
+        self._settings = data["settings"]
+        self._names = data["names"]
+        self._punishments = data["punishments"]
+        self._system = data["system"]
+        self._bot = data["bot"]
         
         self.public_flags = data.get("flags", 0)
         self.avatar_url = data.get("avatar_url", None)
@@ -43,51 +43,51 @@ class User:
     
     @property
     def settings(self):
-        return UserSetting(self.settings)
+        return UserSetting(self._settings)
     
     @property
     def names(self):
-        return [Name(v) for v in self.names]
+        return [Name(v) for v in self._names]
     
     @property
     def status(self):
-        return self.status
+        return self._status
     
     @property
     def activities(self):
-        if not self.activities:
+        if not self._activities:
             return None
         
-        return [Activity(v) for v in self.activities]
+        return [Activity(v) for v in self._activities]
 
     @property
     def public_flags(self):
-        return self.public_flags
+        return self._public_flags
     
     @property
     def avatar(self):
-        return self.avatar
+        return self._avatar
     
     @property
     def avatar_url(self):
-        return self.avatar_url
+        return self._avatar_url
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def discriminator(self):
-        return self.discriminator
+        return self._discriminator
     
     @property
     def bot(self):
-        return self.bot
+        return self._bot
     
     @property
     def system(self):
-        return self.system
+        return self._system
