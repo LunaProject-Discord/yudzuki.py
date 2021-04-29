@@ -1,3 +1,5 @@
+import datetime
+
 __all__ = (
     "Activity",
     "Timestamps"
@@ -20,11 +22,11 @@ class Timestamps:
         
     @property
     def start(self):
-        return self.start
+        return datetime.datetime.utcfromtimestamp(self.start).replace(tzinfo=datetime.timezone.utc)
     
     @property
     def end(self):
-        return self.end
+        return datetime.datetime.utcfromtimestamp(self.end).replace(tzinfo=datetime.timezone.utc)
 
 class Activity:
     
