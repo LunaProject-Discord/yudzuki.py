@@ -61,7 +61,7 @@ class HTTPClient:
             headers["Authorization"] = "Bearer " + self.token
     
         try:
-            async with self.session.request(method, url) as ret:
+            async with self.session.request(method, url, headers=headers) as ret:
                 log.debug("%s %s has returned %s", method, url, ret.status)
             
                 data = await json_or_text(ret)
