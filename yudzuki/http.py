@@ -26,11 +26,11 @@ class Route:
 
 class HTTPClient:
     
-    def __init__(self, token):
+    def __init__(self, token:str=None):
         if token is None:
             raise UnauthorizedDetected("YudzukiAPI token not provided")
             
-        self.token = token
+        self.token = str(token)
         self.session = None
         
         user_agent = "YudzukiClient (https://github.com/LunaProject-Discord/yudzuki.py {0}) aiohttp/{1}"
