@@ -1,5 +1,5 @@
 import setuptools
-from .yudzuki import __version__
+from yudzuki.__init__ import __version__
 
 readme = ""
 with open("README.md", "r", encoding="utf-8") as f:
