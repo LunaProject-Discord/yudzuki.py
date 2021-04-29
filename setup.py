@@ -1,4 +1,5 @@
 import setuptools
+from yudzuki import __version__ 
 
 readme = ""
 with open("README.md", "r", encoding="utf-8") as f:
@@ -7,8 +8,6 @@ with open("README.md", "r", encoding="utf-8") as f:
 requirements = ""
 with open("requirements.txt", "r", encoding="utf-8") as f:
     requirements = f.read()
-
-__version__ = "1.0.0"
 
 setuptools.setup(
     name="yudzuki.py",
