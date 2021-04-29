@@ -1,5 +1,3 @@
-__version__ = "1.0.0"
-
 from .errors import *
 from .activity import *
 from .channel import *
