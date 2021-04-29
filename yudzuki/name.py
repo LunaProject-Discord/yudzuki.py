@@ -1,4 +1,4 @@
-from datetime.datetime import utcfromtimestamp
+import datetime
 
 __all__ = (
     "Name"
@@ -26,8 +26,8 @@ class Name:
     
     @property
     def updated_at(self):
-        return utcfromtimestamp(self.updated_at).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self.updated_at).replace(tzinfo=datetime.timezone.utc)
     
     @property
     def created_at(self):
-        return utcfromtimestamp(self.created_at).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self.created_at).replace(tzinfo=datetime.timezone.utc)
