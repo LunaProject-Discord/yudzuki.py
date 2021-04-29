@@ -23,6 +23,9 @@ class Emoji:
         
         self.roles = data.get("roles", [])
         
+    def _get_json(self):
+        return self.data
+    
     @property
     def id(self):
         return self.id
