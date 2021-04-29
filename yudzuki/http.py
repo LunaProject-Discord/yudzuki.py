@@ -14,9 +14,8 @@ async def json_or_text(resp):
     text = await resp.text(encoding="utf-8")
     
     try:
-        if resp.headers["Content-Type"] == "application/json; charset=UTF-8" or resp.headers["Content-Type"] == "application/json":
-            text = json.loads(text)
-    except KeyError:
+        text = json.loads(text)
+    except:
         pass
     
     return text
