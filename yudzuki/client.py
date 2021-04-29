@@ -16,7 +16,7 @@ from .emoji import Emoji
 from .role import Role
 
 __all__ = (
-    "YudzukiClient"
+    "YudzukiClient",
 )
 
 log = logging.getLogger(__name__)
