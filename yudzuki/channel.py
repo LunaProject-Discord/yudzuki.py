@@ -25,64 +25,64 @@ class TextChannel:
         return self.data
     
     def _update(self, data):
-        self.id = data["id"]
-        self.nsfw = data["nsfw"]
-        self.guild_id = data["guild_id"]
-        self.name = data["name"]
-        self.position = data["position"]
-        self.type = data["type"]
-        self.announce = data["announce"]
+        self._id = data["id"]
+        self._nsfw = data["nsfw"]
+        self._guild_id = data["guild_id"]
+        self._name = data["name"]
+        self._position = data["position"]
+        self._type = data["type"]
+        self._announce = data["announce"]
         
-        self.parent_id = data.get("parent_id", None)
-        self.topic = data.get("topic", None)
-        self.slowmode = data.get("slowmode", 0)
+        self._parent_id = data.get("parent_id", None)
+        self._topic = data.get("topic", None)
+        self._slowmode = data.get("slowmode", 0)
     
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def nsfw(self):
-        return self.nsfw
+        return self._nsfw
     
     @property
     def guild_id(self):
-        return self.guild_id
+        return self._guild_id
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def position(self):
-        return self.position
+        return self._position
     
     @property
     def type(self):
-        return self.type
+        return self._type
     
     @property
     def get_type(self):
-        if self.announce:
+        if self._announce:
             return "news"
         
         return "text"
     
     @property
     def announce(self):
-        return self.announce
+        return self._announce
     
     @property
     def parent_id(self):
-        return self.parent_id
+        return self._parent_id
     
     @property
     def topic(self):
-        return self.topic
+        return self._topic
     
     @property
     def slowmode(self):
-        return self.slowmode
+        return self._slowmode
     
 class VoiceChannel:
         
@@ -103,35 +103,35 @@ class VoiceChannel:
         return self.name
     
     def _update(self, data):
-        self.id = data["id"]
-        self.guild_id = data["guild_id"]
-        self.name = data["name"]
-        self.position = data["position"]
-        self.type = data["type"]
-        self.bitrate = data["bitrate"]
-        self.user_limit = data["user_limit"]
+        self._id = data["id"]
+        self._guild_id = data["guild_id"]
+        self._name = data["name"]
+        self._position = data["position"]
+        self._type = data["type"]
+        self._bitrate = data["bitrate"]
+        self._user_limit = data["user_limit"]
         
-        self.parent_id = data.get("parent_id", None)
+        self._parent_id = data.get("parent_id", None)
     
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def guild_id(self):
-        return self.guild_id
+        return self._guild_id
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def position(self):
-        return self.position
+        return self._position
     
     @property
     def type(self):
-        return self.type
+        return self._type
     
     @property
     def get_type(self):
@@ -139,15 +139,15 @@ class VoiceChannel:
     
     @property
     def bitrate(self):
-        return self.bitrate
+        return self._bitrate
     
     @property
     def user_limit(self):
-        return self.user_limit
+        return self._user_limit
     
     @property
     def parent_id(self):
-        return self.parent_id
+        return self._parent_id
     
 class StoreChannel:
         
@@ -174,29 +174,29 @@ class CategoryChannel:
         return self.name
     
     def _update(self, data):
-        self.id = data["id"]
-        self.guild_id = data["guild_id"]
-        self.position = data["position"]
-        self.type = data["type"]
-        self.name = data["name"]
+        self._id = data["id"]
+        self._guild_id = data["guild_id"]
+        self._position = data["position"]
+        self._type = data["type"]
+        self._name = data["name"]
         
-        self.parent_id = data.get("parent_id", None)
+        self._parent_id = data.get("parent_id", None)
         
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def guild_id(self):
-        return self.guild_id
+        return self._guild_id
     
     @property
     def position(self):
-        return self.position
+        return self._position
     
     @property
     def type(self):
-        return self.type
+        return self._type
     
     @property
     def get_type(self):
@@ -204,11 +204,11 @@ class CategoryChannel:
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def parent_id(self):
-        return self.parent_id
+        return self._parent_id
         
 class Channel:
     
