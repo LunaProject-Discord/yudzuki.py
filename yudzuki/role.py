@@ -17,43 +17,43 @@ class Role:
         )
     
     def _update(self, data):
-        self.id = data["id"]
-        self.color = data["color"]
-        self.managed = data["managed"]
-        self.name = data["name"]
-        self.guild_id = data["guild_id"]
-        self.mentionable = data["mentionable"]
-        self.position = data["potition"]
-        self.hoisted = data["hoisted"]
+        self._id = data["id"]
+        self._color = data["color"]
+        self._managed = data["managed"]
+        self._name = data["name"]
+        self._guild_id = data["guild_id"]
+        self._mentionable = data["mentionable"]
+        self._position = data["potition"]
+        self._hoisted = data["hoisted"]
     
     @property
     def id(self):
-        return self.id
+        return self._id
     
     @property
     def color(self):
-        return self.color
+        return self._color
     
     @property
     def managed(self):
-        return self.managed
+        return self._managed
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def guild_id(self):
-        return self.guild_id
+        return self._guild_id
     
     @property
     def mentionable(self):
-        return self.mentionable
+        return self._mentionable
     
     @property
     def position(self):
-        return self.position
+        return self._position
     
     @property
     def hoisted(self):
-        return self.hoisted
+        return self._hoisted
