@@ -1,6 +1,5 @@
 import aiohttp
 import logging
-import json
 
 from urllib.parse import quote as _uriquote
 
@@ -68,7 +67,7 @@ class HTTPClient:
                 
                 try:
                     if ret.headers["Content-Type"] == "application/json":
-                        data = json.loads(data)
+                        data = await ret.json()
                 except KeyError:
                     pass
                 
