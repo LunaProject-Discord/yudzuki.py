@@ -11,6 +11,9 @@ from . import util
 from .user import User
 from .guild import Guild
 from .name import Name
+from .channel import Channel
+from .emoji import Emoji
+from .role import Role
 
 __all__ = (
     "YudzukiClient"
