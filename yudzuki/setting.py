@@ -1,4 +1,4 @@
-from util import staff_value
+from .util import staff_value
 
 __all__ = (
     "UserSetting",
