@@ -32,7 +32,7 @@ class Guild:
         self.boost_tier = data["boost_tier"]
         self.boost_count = data["boost_count"]
         self.region = data["region"]
-        self.icon = data["icon]
+        self.icon = data["icon"]
         self.icon_url = data["icon_url"]
         self.description = data["description"]
         self.locale = data["locale"]
