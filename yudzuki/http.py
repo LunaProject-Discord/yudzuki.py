@@ -3,7 +3,7 @@ import logging
 
 from urllib.parse import quote as _uriquote
 
-from .errors import HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError
+from .errors import HTTPException, Forbidden, APINotFound, NotFound, YudzukiServerError, UnauthorizedDetected
 from .gateway import YudzukiClientWebSocketResponse
 from .util import json_or_text
 
@@ -26,6 +26,9 @@ class Route:
 class HTTPClient:
     
     def __init__(self, token):
+        if token is None:
+            raise UnauthorizedDetected("YudzukiAPI token not provided")
+            
         self.token = token
         self.session = None
         
@@ -67,7 +70,11 @@ class HTTPClient:
                     log.warning(format)
                     raise HTTPException(ret, data)
                 
-                if ret.status == 403:
+                if ret.status == 400:
+                    raise HTTPException(ret, data)
+                elif ret.status == 401:
+                    raise HTTPException(ret, data)
+                elif ret.status == 403:
                     raise Forbidden(ret, data)
                 elif ret.status == 404:
                     raise NotFound(ret, data)
