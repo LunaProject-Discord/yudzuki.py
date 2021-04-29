@@ -20,6 +20,9 @@ class Name:
         self.updated_at = data["updated_at"]
         self.created_at = data["created_at"]
     
+    def _get_json(self):
+        return self.data
+    
     @property
     def name(self):
         return self.name
