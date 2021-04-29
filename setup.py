@@ -6,12 +6,10 @@ with open("README.md", "r", encoding="utf-8") as f:
     readme = f.read()
 
 setuptools.setup(
-    name="yudzuki",
-    version=__version__,
     author="Team LunaProject",
+    version=__version__,
+    url="https://github.com/LunaProject-Discord/yudzuki.py",
     description="An API Wrapper for YudzukiAPI",
     long_description=readme,
-    long_description_content_type="text/markdown",
-    url="https://github.com/LunaProject-Discord/yudzuki.py",
-    packages=setuptools.find_packages()
+    long_description_content_type="text/markdown"
 )
