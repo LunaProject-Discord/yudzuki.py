@@ -20,16 +20,16 @@ class Timestamps:
         return self.data
     
     def _update(self, data):
-        self.start = data.get("start", 0)
-        self.end = data.get("end", 0)
+        self._start = data.get("start", 0)
+        self._end = data.get("end", 0)
         
     @property
     def start(self):
-        return datetime.datetime.utcfromtimestamp(self.start).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self._start).replace(tzinfo=datetime.timezone.utc)
     
     @property
     def end(self):
-        return datetime.datetime.utcfromtimestamp(self.end).replace(tzinfo=datetime.timezone.utc)
+        return datetime.datetime.utcfromtimestamp(self._end).replace(tzinfo=datetime.timezone.utc)
 
 class Activity:
     
@@ -46,28 +46,28 @@ class Activity:
         return self.data
     
     def _update(self, data):
-        self.name = data.get("name", "")
-        self.emoji = data.get("emoji", "")
-        self.url = data.get("url", "")
-        self.type = data.get("type", "")
-        self.timestamps = data.get("timestamps", {})
+        self._name = data.get("name", "")
+        self._emoji = data.get("emoji", "")
+        self._url = data.get("url", "")
+        self._type = data.get("type", "")
+        self._timestamps = data.get("timestamps", {})
     
     @property
     def name(self):
-        return self.name
+        return self._name
     
     @property
     def emoji(self):
-        return self.emoji
+        return self._emoji
     
     @property
     def url(self):
-        return self.url
+        return self._url
     
     @property
     def type(self):
-        return self.type
+        return self._type
     
     @property
     def timestamps(self):
-        return Timestamps(self.timestamps)
+        return Timestamps(self._timestamps)
