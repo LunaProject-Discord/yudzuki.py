@@ -1,11 +1,9 @@
-import json
-
 async def json_or_text(response):
     text = await response.text(encoding='utf-8')
     
     try:
         if response.headers['Content-Type'] == 'application/json':
-            return json.loads(text)
+            return await response.json()
     except KeyError:
         pass
 
