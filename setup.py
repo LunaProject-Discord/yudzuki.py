@@ -17,6 +17,7 @@ setuptools.setup(
     url="https://github.com/LunaProject-Discord/yudzuki.py",
     license="MIT",
     description="An API Wrapper for YudzukiAPI",
+    packages=setuptooles.find_packages(),
     long_description=readme,
     long_description_content_type="text/markdown",
     install_requires=requirements
