@@ -59,7 +59,7 @@ class GuildSetting:
 
     def __repr__(self):
         return (
-            f"<GuildSetting verified={self.vetified} timezone={self.timezone}>"
+            f"<GuildSetting verified={self.verified} timezone={self.timezone}>"
             f" language={self.language} prefix={self.prefix}>"
         )
     
