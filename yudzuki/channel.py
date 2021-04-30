@@ -155,6 +155,17 @@ class StoreChannel:
         self.data = data
         self._update(data)
     
+    def __repr__(self):
+        return (
+            f"<StoreChannel id=-- name=-->"
+        )
+    
+    def __str__(self):
+        return "None"
+    
+    def _update(self, data):
+        pass
+    
 class CategoryChannel:
         
     def __init__(self, data):
