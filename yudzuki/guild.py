@@ -19,7 +19,7 @@ class Guild:
         )
     
     def __str__(self):
-        return f"{self.name}#{self.discriminator}"
+        return f"{self.name}"
     
     def _update(self, data):
         self._id = data["id"]
