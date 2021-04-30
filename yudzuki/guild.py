@@ -132,10 +132,6 @@ class Guild:
         return self._boost_count
     
     @property
-    def owner(self):
-        return self._owner
-    
-    @property
     def permissions(self):
         return self._permissions
    
