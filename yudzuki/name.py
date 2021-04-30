@@ -1,5 +1,3 @@
-import datetime
-
 __all__ = (
     "Name",
 )
@@ -17,8 +15,8 @@ class Name:
     
     def _update(self, data):
         self._name = data["name"]
-        self._updated_at = data["updated_at"]
-        self._created_at = data["created_at"]
+        self._updated_at = int(data["updated_at"])
+        self._created_at = int(data["created_at"])
     
     def _get_json(self):
         return self.data
@@ -29,8 +27,8 @@ class Name:
     
     @property
     def updated_at(self):
-        return datetime.datetime.utcfromtimestamp(self._updated_at).replace(tzinfo=datetime.timezone.utc)
+        return self._updated_at
     
     @property
     def created_at(self):
-        return datetime.datetime.utcfromtimestamp(self._created_at).replace(tzinfo=datetime.timezone.utc)
+        return self._created_at
