@@ -16,7 +16,7 @@ class UserSetting:
 
     def __repr__(self):
         return (
-            f"<UserSetting permission={self.permission} evaluate_value={self.evaluate_value} verified={self.vetified}>"
+            f"<UserSetting permission={self.permission} evaluate_value={self.evaluate_value} verified={self.verified}>"
             f" timezone={self.timezone} language={self.language}>"
         )
     
