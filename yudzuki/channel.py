@@ -6,7 +6,18 @@ __all__ = (
     "Channel"
 )
 
-class TextChannel:
+class Channel:
+    
+    def __init__(self, data):
+        self.data = data
+    
+    def __str__(self):
+        return self.data["name"]
+    
+    def __repr__(self):
+        return f"<Channel id={self.data['id']} name={self.data['name']} guild_id={self.data['guild_id']} type={self.data['type']}>"
+
+class TextChannel(Channel):
         
     def __init__(self, data):
         self.data = data
@@ -84,7 +95,7 @@ class TextChannel:
     def slowmode(self):
         return self._slowmode
     
-class VoiceChannel:
+class VoiceChannel(Channel):
         
     def __init__(self, data):
         self.data = data
@@ -149,7 +160,7 @@ class VoiceChannel:
     def parent_id(self):
         return self._parent_id
     
-class StoreChannel:
+class StoreChannel(Channel):
         
     def __init__(self, data):
         self.data = data
@@ -166,7 +177,7 @@ class StoreChannel:
     def _update(self, data):
         pass
     
-class CategoryChannel:
+class CategoryChannel(Channel):
         
     def __init__(self, data):
         self.data = data
@@ -220,14 +231,3 @@ class CategoryChannel:
     @property
     def parent_id(self):
         return self._parent_id
-        
-class Channel:
-    
-    def __init__(self, data):
-        self.data = data
-    
-    def __str__(self):
-        return self.data["name"]
-    
-    def __repr__(self):
-        return f"<Channel id={self.data['id']} name={self.data['name']} guild_id={self.data['guild_id']} type={self.data['type']}>"
