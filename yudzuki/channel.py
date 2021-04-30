@@ -214,15 +214,6 @@ class Channel:
     
     def __init__(self, data):
         self.data = data
-        
-        if data["type"] == 0:
-            self = TextChannel(data)
-        elif data["type"] == 4:
-            self = CategoryChannel(data)
-        elif data["type"] == 6:
-            self = StoreChannel(data)
-        elif data["type"] == 2:
-            self = VoiceChannel(data)
     
     def __str__(self):
         return self.data["name"]
