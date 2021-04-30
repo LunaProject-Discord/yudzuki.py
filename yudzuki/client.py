@@ -49,12 +49,12 @@ class YudzukiClient:
     async def get_user_guilds(self, user_id: int):
         data = await self.http.get_user_guilds(user_id)
         
-        return Guild(data)
+        return [Guild(v) for v in data]
     
     async def get_user_names(self, user_id: int):
         data = await self.http.get_user_names(user_id)
         
-        return Name(data)
+        return [Name(v) for v in data]
     
     async def reload_user(self, user_id: int):
         await self.http.reload_user(user_id)
@@ -67,17 +67,17 @@ class YudzukiClient:
     async def get_guild_channels(self, guild_id: int):
         data = await self.http.get_guild_channels(guild_id)
         
-        return Channel(data)
+        return [Channel(v) for v in data]
     
     async def get_guild_roles(self, guild_id: int):
         data = await self.http.get_guild_roles(guild_id)
         
-        return Role(data)
+        return [Role(v) for v in data]
     
     async def get_guild_emojis(self, guild_id: int):
         data = await self.http.get_guild_emojis(guild_id)
         
-        return Emoji(data)
+        return [Emoji(v) for v in data]
     
     async def reload_guild(self, guild_id: int):
         await self.http.reload_guild(guild_id)
