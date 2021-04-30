@@ -225,7 +225,8 @@ class Channel:
     
     def __init__(self, data):
         self.data = data
-        
+    
+    def __new__(self, data):        
         if int(data["type"]) == 0:
             return TextChannel(data)
         elif int(data["type"]) == 2:
