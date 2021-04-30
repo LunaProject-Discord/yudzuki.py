@@ -33,10 +33,10 @@ class User:
         self._system = data["system"]
         self._bot = data["bot"]
         
-        self.public_flags = data.get("flags", 0)
-        self.avatar_url = data.get("avatar_url", None)
-        self.status = data.get("online_status", "offline")
-        self.activities = data.get("activities", None)
+        self._public_flags = data.get("flags", 0)
+        self._avatar_url = data.get("avatar_url", None)
+        self._status = data.get("online_status", "offline")
+        self._activities = data.get("activities", None)
     
     def _get_json(self):
         return self.data
