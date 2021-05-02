@@ -41,9 +41,9 @@ loop.run_until_complete(coro(546682137240403984))
 ***
 Requirements
 ====
-* **Python 3.8
-* **aiohttp
-* **urllib
+* **Python 3.8**
+* **aiohttp**
+* **urllib**
 
 ***
 Support
