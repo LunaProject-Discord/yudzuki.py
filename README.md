@@ -20,7 +20,7 @@ python3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
 ```
 
 ***
-Usage:
+Usage
 ====
 ```python
 import yudzuki
@@ -39,7 +39,7 @@ loop.run_until_complete(coro(546682137240403984))
 ```
 
 ***
-Requirements:
+Requirements
 ====
 ・Python 3.8
 ・aiohttp
