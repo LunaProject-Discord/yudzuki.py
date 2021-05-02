@@ -3,7 +3,6 @@
 An API Wrapper for YudzukiAPI
 
 ***
-
 Installation
 ====
 Stable:
@@ -40,7 +39,13 @@ loop.run_until_complete(coro(546682137240403984))
 ```
 
 ***
+Requirements:
+====
+・Python 3.8
+・aiohttp
+・urllib
 
+***
 Support
 ====
 https://lunaproject.jp/support
