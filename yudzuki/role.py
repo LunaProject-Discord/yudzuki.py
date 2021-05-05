@@ -16,6 +16,11 @@ class Role:
             f"<Role id={self.id} name={self.name}>"
         )
     
+    def __str__(self):
+        return (
+            f"{self.name}"
+        )
+    
     def _update(self, data):
         self._id = data["id"]
         self._color = data["color"]
