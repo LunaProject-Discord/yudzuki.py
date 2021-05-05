@@ -13,6 +13,11 @@ class Name:
             f"<Name name={self.name}>"
         )
     
+    def __str__(self):
+        return (
+            f"{self.name}"
+        )
+    
     def _update(self, data):
         self._name = data["name"]
         self._updated_at = int(data["updated_at"])
