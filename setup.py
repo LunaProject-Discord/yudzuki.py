@@ -1,23 +1,31 @@
-import setuptools
-from yudzuki import __version__ 
+#!/usr/bin/env python
+# coding: utf-8
+from yudzuki import __version__
+from setuptools import setup, find_packages
+from codecs import open
+from os import path
 
-readme = ""
-with open("README.md", "r", encoding="utf-8") as f:
-    readme = f.read()
-    
+here = path.abspath(path.dirname(__file__))
+
+long_description = ""
+with open(path.join(here, 'README.md'), encoding='utf-8') as f:
+    long_description = f.read().replace('\r\n', '\n')
+
 requirements = ""
 with open("requirements.txt", "r", encoding="utf-8") as f:
     requirements = f.read()
 
-setuptools.setup(
-    name="yudzuki.py",
-    author="LunaProject Team Member",
+setup(
+    name='yudzuki.py',
     version=__version__,
-    url="https://github.com/LunaProject-Discord/yudzuki.py",
-    license="MIT",
-    description="An API Wrapper for YudzukiAPI",
-    packages=setuptools.find_packages(),
-    long_description=readme,
-    long_description_content_type="text/markdown",
-    install_requires=requirements
+    license='MIT',
+    description='An API Wrapper for Yudzuki API',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    author='midorichaan',
+    author_email='furandorusukaret.jp@gmail.com',
+    url='https://github.com/LunaProject-Discord/yudzuki.py',
+    install_requires=requirements,
+    packages=find_packages(),
+    keywords='yudzuki.py',
 )
