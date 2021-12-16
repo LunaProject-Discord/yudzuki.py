@@ -1,16 +1,16 @@
 # yudzuki.py
 
-An API Wrapper for YudzukiAPI
+LunaProject公式APIライブラリ / An API Wrapper for YudzukiAPI
 
 ***
 Installation
 ====
-Stable:
+安定版 / Stable:
 ```bash
 #comming soon...
 ```
 
-Beta:
+ベータ版 / Beta:
 ```bash
 #Windows
 $ py -3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
@@ -22,7 +22,7 @@ $ python3 -m pip install git+ssh://git@github.com/LunaProject-Discord/yudzuki.py
 ```
 
 ***
-Usage
+使用法 / Usage
 ====
 ```python
 import yudzuki
@@ -48,6 +48,6 @@ Requirements
 * **urllib**
 
 ***
-Support
+サポート / Support
 ====
 https://lunaproject.jp/support
