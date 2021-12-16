@@ -1,8 +1,7 @@
+import aiohttp
 import asyncio
 import logging
 import traceback
-
-import aiohttp
 
 from .errors import *
 from .gateway import *
