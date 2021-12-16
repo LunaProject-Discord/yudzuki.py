@@ -13,10 +13,12 @@ Stable:
 Beta:
 ```bash
 #Windows
-py -3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
+$ py -3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
+$ py -3 -m pip install git+ssh://git@github.com/LunaProject-Discord/yudzuki.py
 
 #Linux
-python3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
+$ python3 -m pip install git+https://github.com/LunaProject-Discord/yuduzki.py
+$ python3 -m pip install git+ssh://git@github.com/LunaProject-Discord/yudzuki.py
 ```
 
 ***
